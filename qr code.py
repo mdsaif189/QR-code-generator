@@ -1,4 +1,4 @@
-'''Python Program - QR Code generating by DJ Harshit'''
+'''Python Program - QR Code generating '''
 
 # Importing the modules
 from tkinter import *
@@ -9,7 +9,7 @@ def gen_qr():
     global qr, img
     qr = pyqrcode.QRCode(con.get())
     qr_xbm = qr.xbm(scale=5)
-    img = BitmapImage(data=qr_xbm, foreground='black', background='white')
+    img = BitmapImage(data=qr_xbm, foreground='red', background='white')
     l4.config(image=img)
 
 def save():
@@ -36,7 +36,7 @@ f3.pack()
 
 l1 = Label(f1, text='QR Code Generator', font=('SugarFont Bold', 30, 'bold'))
 l1.grid(row=0, column=0, columnspan=3, padx=5, pady=10)
-l2 = Label(f1, text='By Harshit', font=('Arial Rounded MT Bold', 15))
+l2 = Label(f1, text='By saif', font=('Arial Rounded MT Bold', 15))
 l2.grid(row=0, column=4, sticky='w', pady=10)
 
 l3 = Label(f2, font=('', 10), text='Enter the content')
@@ -49,7 +49,7 @@ b1 = Button(f2, text='Generate', command=gen_qr)
 b1.grid(row=1, column=0, pady=10)
 
 b2 = Button(f2, text='Save', command=save)
-b2.grid(row=1, column=1, pady=10)
+b2.grid(row=1, column=1, pady=15)
 
 l4 = Label(f3, pady=5)
 l4.pack()
